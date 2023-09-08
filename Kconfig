@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# For a description of the syntax of this configuration file,
+# see Documentation/kbuild/kconfig-language.rst.
+#
+
+mainmenu "Butane-Kernel Configuration"
+
+config BUTANE_KERNEL
+    bool "Enable Butane-Kernel"
+    help
+      Enable support for Butane-Kernel.
+
+# Include architecture-specific configuration
+source "arch/Kconfig"
+
+# Include init-related configuration
+source "init/Kconfig"
+
+# Include kernel-specific configuration
+source "kernel/Kconfig"
+
+# Include filesystem-related configuration
+source "fs/Kconfig"
+
+# Include memory management configuration
+source "mm/Kconfig"
+
+# Include network configuration
+source "net/Kconfig"
+
+# Include drivers configuration
+source "drivers/Kconfig"
+
+# Include filesystem configuration
+source "fs/Kconfig"
+
+# Include security-related configuration
+source "security/Kconfig"
+
+# Include cryptographic options
+source "crypto/Kconfig"
+
+# Include library-related configuration
+source "lib/Kconfig"
+
+# Include debugging-related configuration
+source "lib/Kconfig.debug"
+
+# Include documentation-related configuration
+source "Documentation/Kconfig"
